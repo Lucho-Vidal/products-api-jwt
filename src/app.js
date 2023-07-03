@@ -1,10 +1,14 @@
 import express from "express";
 import morgan from "morgan";
 import pkg from "../package.json";
+
+import { createRoles } from "./libs/initialSetup";
+
 import productsRoutes from "./routers/productos.routes";
 import authRoutes from "./routers/auth.routes";
 
 const app = express();
+createRoles();
 
 app.set("pkg", pkg);
 
